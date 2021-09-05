@@ -18,6 +18,8 @@ dbConnection(MONGO_URL);
 
 app.use(morgan("combined"));
 app.use(express.static('./src/public'));
+app.use('/script', express.static("./node_modules/web3.js-browser/build/"))
+
 app.use(express.static(path.join(__dirname, '/')));
 app.use(express.json());
 app.use(

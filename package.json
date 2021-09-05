@@ -11,7 +11,9 @@
     "mongoose": "^6.0.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
-    "socket.io": "^4.2.0"
+    "socket.io": "^4.2.0",
+    "web3": "^1.5.2",
+    "web3.js-browser": "^0.2.0"
   },
   "name": "Minigame",
   "version": "1.0.0",

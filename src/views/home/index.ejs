@@ -3,6 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<%- include('../index.ejs') %>
+		<script src="./script/web3.js"></script>
 		<title>Home</title>
 	</head>
 	<body>
@@ -11,5 +12,17 @@
 		<% if (message) { %> <%- include('../components/toast.ejs',{message}) %> <% } %>
 	</body>
 
-	<script></script>
+	<script>
+		$(document).ready(function () {
+			// check meta mask has been installed yet
+			function checkMM() {
+				if (typeof window.ethereum !== 'undefined') {
+					alert('metaMask has been installed');
+				} else alert('metaMask has not been installed');
+			}
+
+			// run check MM
+			checkMM();
+		});
+	</script>
 </html>
