@@ -11,7 +11,7 @@
     "mongoose": "^6.0.4",
     "morgan": "^1.10.0",
     "nodemon": "^2.0.12",
-    "socketio": "^1.0.0"
+    "socket.io": "^4.2.0"
   },
   "name": "Minigame",
   "version": "1.0.0",

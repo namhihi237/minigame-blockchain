@@ -3,9 +3,14 @@ import { envVariables, dbConnection } from "./configs";
 import express from "express";
 const morgan = require("morgan");
 import path from "path";
+import http from "http";
+import io from "socket.io";
+
 const { PORT, MONGO_URL } = envVariables;
 
 const app = express();
+const server = http.createServer(app);
+io = io(server);
 
 dbConnection(MONGO_URL);
 
