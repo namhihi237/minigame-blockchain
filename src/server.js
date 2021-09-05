@@ -6,6 +6,8 @@ import path from "path";
 import http from "http";
 import io from "socket.io";
 
+import { userRouter } from "./routers"
+
 const { PORT, MONGO_URL } = envVariables;
 
 const app = express();
@@ -30,9 +32,10 @@ app.set('view engine', 'ejs');
 
 // home route
 app.get("/", (req, res) => {
-	res.render('home/index.ejs');
+	res.render('home/index.ejs', { message: "" });
 });
 
+app.use("/users", userRouter);
 
 // start server
 server.listen(PORT, () => {

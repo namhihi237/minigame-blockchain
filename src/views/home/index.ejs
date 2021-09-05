@@ -1,1 +1,15 @@
-<h2>Hello world</h2>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<%- include('../index.ejs') %>
+		<title>Home</title>
+	</head>
+	<body>
+		<h2>Mini Game</h2>
+		<a href="/users/register" class="badge badge-primary">register user</a>
+		<% if (message) { %> <%- include('../components/toast.ejs',{message}) %> <% } %>
+	</body>
+
+	<script></script>
+</html>
