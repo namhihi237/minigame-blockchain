@@ -5,10 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<%- include('../index.ejs') %>
+		<script src="../js/proccess.js"></script>
 		<title>Create user</title>
 	</head>
 	<body>
-		<form action="/users/register" method="POST">
+		<form>
 			<div class="form-group">
 				<label for="formGroupExampleInput">Name</label>
 				<input type="text" class="form-control" id="name" placeholder="Tony" name="name" />
@@ -21,9 +22,20 @@
 				<label for="formGroupExampleInput3">Phone</label>
 				<input type="text" class="form-control" id="phone" placeholder="0123456789" name="phone" />
 			</div>
-			<button type="submit" class="btn btn-primary">Register</button>
+			<button type="button" class="btn btn-primary" id="submit">Register</button>
+			<button class="btn btn-primary" id="connectMM">Connect metaMask</button>
 		</form>
-		<% if (message) { %> <%- include('../components/toast.ejs',{message}) %> <% } %>
+		<div class="table">
+			<table id="tableDs">
+				<thead>
+					<tr>
+						<th scope="col">Address</th>
+						<th scope="col">ID</th>
+					</tr>
+				</thead>
+				<tbody class="row" id="tableBody"></tbody>
+			</table>
+		</div>
 	</body>
 	<script></script>
 </html>

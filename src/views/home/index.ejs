@@ -4,25 +4,14 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<%- include('../index.ejs') %>
 		<script src="./script/web3.js"></script>
+		<script src="./js/proccess.js"></script>
 		<title>Home</title>
 	</head>
 	<body>
 		<h2>Mini Game</h2>
 		<a href="/users/register" class="badge badge-primary">register user</a>
-		<% if (message) { %> <%- include('../components/toast.ejs',{message}) %> <% } %>
+		<button class="btn btn-primary" id="connectMM">Connect metaMask</button>
 	</body>
 
-	<script>
-		$(document).ready(function () {
-			// check meta mask has been installed yet
-			function checkMM() {
-				if (typeof window.ethereum !== 'undefined') {
-					alert('metaMask has been installed');
-				} else alert('metaMask has not been installed');
-			}
-
-			// run check MM
-			checkMM();
-		});
-	</script>
+	<script></script>
 </html>

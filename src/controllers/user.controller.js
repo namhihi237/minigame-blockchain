@@ -10,19 +10,17 @@ class UserController {
     try {
       const { name, email, phone } = req.body;
       if (!name || !email || !phone) {
-        return res.render('users/register.ejs', {
-          message: 'All fields are required.'
-        });
+        return res.status(400).json({ status: 400, message: "All data are required" });
       }
       const user = await User.findOne({ email });
       if (user) {
-        return res.render('users/register', { message: 'Email is already registered' });
+        return res.status(400).json({ status: 400, message: "Email is already registered" });
       }
-      await User.create({ name, email, phone });
-      return res.render('home/index.ejs', { message: 'Register successfully' });
+      const newUser = await User.create({ name, email, phone });
+      return res.status(200).json({ status: 200, message: "Register successfully", user: newUser });
     } catch (error) {
       console.log(error);
-      res.render('users/register', { message: 'error!' });
+      return res.status(400).json({ status: 500, message: "Server error" });
     }
   }
 }

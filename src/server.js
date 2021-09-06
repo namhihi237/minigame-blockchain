@@ -34,7 +34,7 @@ app.set('view engine', 'ejs');
 
 // home route
 app.get("/", (req, res) => {
-	res.render('home/index.ejs', { message: "" });
+	res.render('home/index.ejs');
 });
 
 app.use("/users", userRouter);
